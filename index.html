@@ -32,13 +32,20 @@
 
   <body>
     <header></header>
+    <!-- main section -->
     <main class="main container-fluid">
+      <!-- search area -->
       <div class="m-5 row">
         <div class="col-md-4 m-auto mt-4 rounded-3 search-box p-0">
           <div class="input-group">
-            <input id="input-field" class="form-control" type="text" />
+            <input
+              id="input-field"
+              class="form-control"
+              type="text"
+              placeholder="Men's long shirt"
+            />
             <button
-              class="btn btn-primary"
+              class="btn btn-dark"
               type="button"
               data-toggle="button"
               aria-pressed="false"
@@ -51,17 +58,19 @@
           </div>
         </div>
       </div>
+      <!-- products section -->
       <div class="row g-2">
         <div class="col-md-9 col-lg-9 col-sm-7">
-          <div id="all-products" class="row row-cols-1 row-cols-md-3 g-2">
-            <!-- Products will display here -->
+          <div id="all-products" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- All Products will display here -->
           </div>
         </div>
+        <!-- Cart section -->
         <div class="col-md-3 col-lg-3 col-sm-5">
-          <div class="card p-2 position-fixed" id="my-cart">
+          <div class="card p-2 position-fixed end-0" id="my-cart">
             <table class="table">
               <thead>
-                <h1>My-Cart</h1>
+                <h1 class="mb-0">My-Cart</h1>
                 <tr>
                   <th scope="col"></th>
                   <th scope="col"></th>
@@ -93,7 +102,7 @@
                 </tr>
               </tbody>
             </table>
-            <button class="btn btn-primary">Buy Now</button>
+            <button id="buy-now" class="btn text-white">Buy Now</button>
           </div>
         </div>
       </div>

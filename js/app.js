@@ -1,4 +1,3 @@
-// loading all products
 const loadProducts = () => {
   const data = [
     {
@@ -212,7 +211,6 @@ const loadProducts = () => {
 };
 
 // show all product in UI
-
 const showProducts = (products) => {
   const productsContainer = document.getElementById("all-products");
   for (const product of products) {
@@ -220,28 +218,37 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("col");
     div.innerHTML = `
-    <div class="card h-100 shadow">
-        <img style="width:150px;height:150px;"class="card-img-top m-auto pt-4" src=${image}></img>
-        <div class="card-body">
-          <h3>${product.title}</h3>
-          <p class="mb-0 fst-italic">Category: ${product.category}</p>
-                   
+    <div class="card h-100 shadow-sm">
+      <img  src=${image} style="width:150px;height:150px;"class="card-img-top m-auto pt-4">
+      <div class="card-body">
+        <h6 class="mb-1">${product.title}</h6>
+        <p class="mb-0 text-muted">Category: ${
+          product.category
+        }</p>                   
+      </div>
+      <div class="px-3 mb-2">
+        <div class="d-flex justify-content-between fw-bold">
+          <p>Price: <span class="theme-color">$ ${product.price.toFixed(
+            2
+          )}</span></p>
+          <p>Ratings: <span class="theme-color">${
+            product.rating.rate
+          }</span> (${product.rating.count})</p>
         </div>
-        <div class="px-3 mb-2">
-          <div>
-            Ratings: <span class="ratings">${product.rating.rate}</span> (${
-      product.rating.count
-    }) 
-          </div> 
-          <h3>Price: $ ${product.price.toFixed(2)}</h3>
-          <div>
-          <button onclick="addToCart(${product.id},${
-      product.price
-    })" id="addToCart-btn" class="btn btn-success">add to cart</button>
-          <button class="btn btn-danger">Details</button></div>
-        </div>      
-    </div>
-      `;
+        <div class="d-flex flex-column">
+        <button class="btn btn-sm btn-outline-dark shadow">
+        Details
+        </button>
+          <button
+          onclick="addToCart(${product.id},${product.price})"
+          id="addToCart-btn"
+          class="btn btn-sm btn-dark mt-2 shadow"
+          >
+          add to cart <i class="fas fa-cart-plus theme-color"></i> 
+          </button>
+        </div>
+      </div>
+    </div>`;
     productsContainer.appendChild(div);
   }
 };
@@ -301,4 +308,5 @@ const updateTotal = () => {
     getValue("price") + getValue("delivery-charge") + getValue("total-tax");
   setInnerText("total", grandTotal);
 };
+// loading all products
 loadProducts();

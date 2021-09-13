@@ -1,12 +1,31 @@
+/* common style */
 body {
-  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
-
+.theme-color {
+  color: #ff7600;
+}
+/* search box */
 .search-box {
-  border: 1px solid rgb(3, 118, 211);
+  border: 1px solid black;
+}
+.form-control:focus {
+  border-color: black;
+  box-shadow: 0 0 0 0.05rem black;
+}
+/* single product style */
+.card {
+  background-color: whitesmoke;
+  border-radius: 10px;
 }
 
-.ratings {
-  color: rgb(249 102 1);
+/* cart section touch up */
+#my-cart {
+  background-color: white;
+}
+#buy-now {
+  background-color: #cb3a05;
+}
+.table {
+  width: 310px;
 }
