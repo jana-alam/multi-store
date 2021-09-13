@@ -6,3 +6,7 @@ body {
 .search-box {
   border: 1px solid rgb(3, 118, 211);
 }
+
+.ratings {
+  color: rgb(249 102 1);
+}
